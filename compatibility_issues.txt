@@ -1,0 +1,16 @@
+TrainingArguments:
+Removed unsupported arguments: evaluation_strategy, eval_steps, save_steps, save_total_limit, metric_for_best_model, greater_is_better, optim, warmup_ratio, push_to_hub, report_to, overwrite_output_dir.
+Only used basic, widely supported arguments (batch size, learning rate, epochs, logging_steps, fp16, weight_decay, seed, output_dir).
+
+SFTTrainer:
+Removed unsupported arguments: tokenizer, callbacks, and max_seq_length.
+Only used: model, args, train_dataset, and eval_dataset.
+
+Early Stopping:
+Could not use EarlyStoppingCallback directly in the trainer due to lack of support for callbacks in this TRL version. Early stopping must be handled manually by monitoring validation loss.
+
+Dataset Preparation:
+Ensured the dataset passed to SFTTrainer has a single "text" field, as required by TRL 0.18.2.
+
+General:
+All advanced or newer features from recent versions of transformers/TRL were avoided to ensure compatibility with the older APIs.

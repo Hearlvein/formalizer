@@ -1,0 +1,18 @@
+# Core HuggingFace stack (latest stable versions)
+transformers==4.41.1
+datasets==2.19.1
+peft==0.10.0
+trl==0.8.6
+accelerate==0.29.2
+bitsandbytes==0.43.0  # GPU-only; will error on CPU-only systems
+
+# Data science utilities
+pandas==2.2.3
+scikit-learn==1.5.2
+
+# Optional: standalone lightweight Keras (you can replace with `tensorflow` if needed)
+tf-keras==2.15.0
+
+# Notebook support
+notebook
+ipywidgets
